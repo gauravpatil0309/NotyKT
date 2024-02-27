@@ -7,8 +7,8 @@ ENV ANDROID_BUILD_TOOLS=30.0.3
 ENV ANDROID_SDK_ROOT=/sdk
 
 # Install System Dependencies
-RUN dnf update -y && \
-    dnf install -y wget tar unzip glibc.i686 zlib.i686
+RUN yum update -y && \
+    yum install -y wget tar unzip glibc.i686 zlib.i686
 
 # Install Android SDK    
 RUN wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip && \ 
