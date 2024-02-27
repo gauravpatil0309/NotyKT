@@ -9,7 +9,7 @@ ENV ANDROID_SDK_ROOT=/sdk
 # Install System Dependencies
 RUN dnf update -y && \
     dnf install -y wget tar unzip glibc.i686 zlib.i686 lib32stdc++6 lib32z1 && \
-    dnf clean all && \
+    dnf clean all
 
 # Install Android SDK    
 RUN wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip && \ 
