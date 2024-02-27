@@ -8,7 +8,7 @@ ENV ANDROID_SDK_ROOT=/sdk
 
 # Install System Dependencies
 RUN yum update -y && \
-    yum install -y wget tar unzip glibc.i686 zlib.i686
+    yum install -y wget tar unzip glibc zlib
 
 # Install Android SDK    
 RUN wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip && \ 
