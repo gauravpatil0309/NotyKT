@@ -7,7 +7,10 @@ ENV ANDROID_BUILD_TOOLS=30.0.3
 ENV ANDROID_SDK_ROOT=/sdk
 
 # Install Android SDK
-RUN wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip && \ 
+RUN yum update -y && \
+    yum install -y wget tar unzip glibc.i686 zlib.i686 lib32stdc++6 lib32z1 && \
+    yum clean all && \
+    wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip && \ 
     unzip -d android-sdk-linux android-sdk.zip && \
     echo y | android-sdk-linux/tools/bin/sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null && \
     echo y | android-sdk-linux/tools/bin/sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "platform-tools" >/dev/null && \
