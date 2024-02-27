@@ -12,7 +12,7 @@ RUN wget --quiet --output-document=android-sdk.zip https://dl.google.com/android
     echo y | android-sdk-linux/tools/bin/sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null &&\
     echo y | android-sdk-linux/tools/bin/sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "platform-tools" >/dev/null &&\
     echo y | android-sdk-linux/tools/bin/sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null &&\
-    rm android-sdk.zip
+    rm -rf android-sdk.zip
 
 # Set PATH to include Android SDK tools
 ENV PATH=${ANDROID_SDK_ROOT}/tools:${ANDROID_SDK_ROOT}/platform-tools:${PATH}
