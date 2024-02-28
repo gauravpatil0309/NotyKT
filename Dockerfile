@@ -26,7 +26,6 @@ ENV PATH=/gradle-${GRADLE_VERSION}/bin:$PATH
 
 # Copy the Android project files to the container
 COPY noty-android/ /app
-COPY noty-android/gradle/wrapper /app/gradle/wrapper
 
 # Set the working directory
 WORKDIR /app
