@@ -17,7 +17,7 @@ RUN wget --quiet --output-document=android-sdk.zip https://dl.google.com/android
 
 # Install Gradle
 RUN curl -L https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -o gradle.zip && \
-    unzip gradle.zip && \
+    unzip gradle.zip
    
 
 # Set PATH to include Android SDK tools
